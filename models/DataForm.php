@@ -5,6 +5,7 @@ namespace app\models;
 
 
 use yii\base\Model;
+use yii\widgets\ActiveField;
 
 class DataForm extends Model
 {
@@ -28,16 +29,11 @@ class DataForm extends Model
     public function rules()
     {
         return [
-            // поля обязательные к заполнению
             [['fio', 'phone', 'email'], 'required'],
-            // проверка на тип данных
             ['email', 'email'],
-            // проверка на тип данных
-            [ 'phone', 'match', 'pattern' => '\+[0-9] \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$', 'message' => 'Вы ввели не верные данные' ],
-
             [ 'comment', 'trim'],
-            [ 'comment', 'max' => 1024, 'tooLong' => 'Максимально 1024 символа'],
-
+            [ 'comment', 'string', 'max' => 1024, 'tooLong' => 'Максимально 1024 символа'],
+//          [ 'phone', 'match', 'pattern' => '\+[0-9] \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$', 'message' => 'Вы ввели не верные данные' ],
         ];
     }
 

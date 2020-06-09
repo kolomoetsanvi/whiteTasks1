@@ -7,6 +7,8 @@ use yii\db\Expression;
 
 class User extends ActiveRecord
 {
+   // поле используется для работы формы (чек-боксы)
+    public $additionally;
 
     public static function tableName()
     {
@@ -25,6 +27,32 @@ class User extends ActiveRecord
                 // если вместо метки времени UNIX используется datetime:
                 'value' => new Expression('NOW()'),
             ],
+        ];
+    }
+
+
+
+
+
+    public function attributeLabels()
+    {
+        return [
+            'fio' => 'ФИО',
+            'phone' => 'Телефон',
+            'email' => 'Email',
+            'additionally' => 'Оплатить дополнительно',
+            'comment' => 'Комментарий',
+        ];
+    }
+
+    public function rules()
+    {
+        return [
+            [['fio', 'phone', 'email'], 'required'],
+            ['email', 'email'],
+            [ 'comment', 'trim'],
+            [ 'comment', 'string', 'max' => 1024, 'tooLong' => 'Максимально 1024 символа'],
+//          [ 'phone', 'match', 'pattern' => '\+[0-9] \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$', 'message' => 'Вы ввели не верные данные' ],
         ];
     }
 
