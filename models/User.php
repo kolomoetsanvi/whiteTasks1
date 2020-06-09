@@ -31,9 +31,6 @@ class User extends ActiveRecord
     }
 
 
-
-
-
     public function attributeLabels()
     {
         return [
@@ -52,7 +49,7 @@ class User extends ActiveRecord
             ['email', 'email'],
             [ 'comment', 'trim'],
             [ 'comment', 'string', 'max' => 1024, 'tooLong' => 'Максимально 1024 символа'],
-//          [ 'phone', 'match', 'pattern' => '\+[0-9] \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$', 'message' => 'Вы ввели не верные данные' ],
+            [ 'phone', 'match', 'pattern' => '/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/', 'message' => 'Номер телефона нужно ввести в форматее +X(XXX)XXX-XX-XX' ],
         ];
     }
 

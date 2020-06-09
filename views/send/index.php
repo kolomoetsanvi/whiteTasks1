@@ -4,32 +4,40 @@ if (!empty($user)): ?>
 
     <div class="panel panel-primary panel-add"">
         <div class="panel-body">
-            <div class="row">
-                <?='ФИО: '.$user->fio ?>
-            </div>
-            <div class="row">
-                <?='Телефон: '.$user->phone ?>
-            </div>
-            <div class="row">
-                <?='Email: '.$user->email ?>
-            </div>
 
-            <?php if (count($additionally) > 0): ?>
-                <div class="row">
-                    <?='Оплатить дополнительно:' ?>
-                </div>
-                <ul>
-                 <?php foreach ($additionally as $item):?>
-                        <li><?=$item ?></li>
-                 <?php endforeach?>
-                </ul>
-            <?php endif;?>
-            <?php if (!empty($user->comment)): ?>
-                <div class="row">
-                     <?='Комментарий: '.$user->comment ?>
-                </div>
-            <?php endif;?>
+             <table class="table table-striped table-bordered table-hover" id="confirmedVacTable">
+                 <tbody >
+                    <tr><td>
+                        <?='ФИО: '.$user->fio ?>
+                    </td></tr>
+                    <tr><td>
+                        <?='Телефон: '.$user->phone ?>
+                    </td></tr>
+                    <tr><td>
+                        <?='Email: '.$user->email ?>
+                    </td></tr>
+
+                    <?php if (count($additionally) > 0): ?>
+                        <tr><td>
+                            <?='Оплатить дополнительно:' ?>
+                            <ul>
+                             <?php foreach ($additionally as $item):?>
+                                    <li><?php itemToString($item)?></li>
+                             <?php endforeach?>
+                            </ul>
+                        </td></tr>
+                    <?php endif;?>
+                    <?php if (!empty($user->comment)): ?>
+                        <tr><td>
+                             <?='Комментарий: '.$user->comment ?>
+                        </td></tr>
+                    <?php endif;?>
+                 </tbody>
+            </table>
         </div>
     </div>
 
 <?php endif;?>
+
+
+

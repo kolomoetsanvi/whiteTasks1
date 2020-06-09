@@ -1,21 +1,37 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
+##Задание:
+2.	Нужно сверстать форму. Стилизация формы должна, быть выполнена на любой вкус не имеет значение. Единицы измерения при верстке использовать пиксели (px). Форма должна быть адаптивной. 
+В форме должны быть данные такие как:  
+a) ФИО (input)  
+b) Телефон (input)  
+c) Email (input)  
+d) Список из 5 checkbox с заголовком «Оплатить дополнительно».  
+*  Доставку 
+* Перевозку 
+* Страховку 
+* Дополнительное оборудование 
+* Дополнительную консультацию  
+e) Комментарий (textarea) 
+f) Кнопка отправки 
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+3. Создать простую базу данных MySql с таблицей users. Поля такие же как на форме.   
+4. Создать соединение с базой данных. Можно использовать отдельный файл, можно в файле обработчике ниже. 
+5. Создать файл обработчик, например send.php, в котором нужно обработать запрос и выдать на экран данные в виде названия поля двоеточие данное.  К примеру если это ФИО то так: «ФИО: Семенов Сергей Павлович». Так же в обработчике написать отправку данных на любой email. Записать все данные с формы в базу данных.
+Дополнительно: Информацию указанную в чекбоксах, выводить только ту, которую выбрал пользователь при отправке формы. Все данные должны быть безопасно обработаны.
+Поля телефон и Email должны иметь валидную проверку касательно типу данных полей. То есть мы должны убедится что указан имейл а не просто текст, то же самое и с телефоном.
+ 
+Использовать метод передачи данных POST 
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.com/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-app-basic)
+
+--------------------
+### Для отпраки почты
+Для отпраки почты необходимо настроить:
+config/web.php
+
+'useFileTransport' => true,  - ЗАКОММЕНТИРОВАТЬ 
+'username' => '',  - ВВЕСТИ ДАННЫЕ 
+'password' => '',  - ВВЕСТИ ДАННЫЕ 
+--------------------
 
 DIRECTORY STRUCTURE
 -------------------
