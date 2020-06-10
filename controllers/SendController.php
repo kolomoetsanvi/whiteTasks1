@@ -24,8 +24,8 @@ class SendController extends Controller
             $additionally = $data['additionally'];
             if(in_array("delivery", $additionally)) $user->delivery = true;
             if(in_array("transportation", $additionally)) $user->transportation = true;
-            if(in_array("insuranc", $additionally)) $user->insuranc = true;
-            if(in_array("equipmen", $additionally)) $user->equipmen = true;
+            if(in_array("insurance", $additionally)) $user->insurance = true;
+            if(in_array("equipment", $additionally)) $user->equipment = true;
             if(in_array("consultation", $additionally)) $user->consultation = true;
 
             //сохранение данных в БД

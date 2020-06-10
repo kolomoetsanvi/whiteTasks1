@@ -2,7 +2,7 @@
 
 <?php
 use yii\helpers\Html;
-use yii\widgets\ActiveForm; ?>
+use yii\bootstrap\ActiveForm; ?>
 
 <?php
 $this->title = 'Тестовое задание';
